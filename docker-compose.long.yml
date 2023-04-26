@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+
+  backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    image: backend
+    environment:
+      TZ: Asia/Ho_Chi_Minh
+    networks:
+      - network1
+    container_name: backend-container
+    stdin_open: true
+    tty: true
+    
+networks:
+  network1:
+    name: bonik-network
+    external: true

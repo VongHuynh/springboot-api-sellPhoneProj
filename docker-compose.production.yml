@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  springboot-restful-webservices:
+    container_name: springboot-restful-webservices
+    build:
+      context: .
+      dockerfile: prod.Dockerfile
+    ports:
+      - "8079:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      TZ: Asia/Ho_Chi_Minh
+    restart: unless-stopped
